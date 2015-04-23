@@ -1,0 +1,99 @@
+body {
+	background: url(https://abs.twimg.com/b/front_page/v1/JP_ASIA_4.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-top: 75px;
+}
+.container {
+	max-width: 85%;
+	padding-top: 10%;
+}
+.container-fluid {
+	max-width: 85%;
+}
+.introText {
+	color: white;
+	font-family: Helvetica;
+}
+h1 {
+	font-weight: bold;
+	font-size: 47px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+}
+p {
+	font-size: 20px;
+	margin-right: 20px;
+}
+.signIn, .signUp {
+	background-color: white;
+	border-radius: 6px;
+	padding: 15px;
+}
+.signIn {
+	margin-bottom: 15px;	
+}
+.signUp {
+	padding-bottom: 45px;
+}
+.sameLine {
+	display: inline-block;
+}
+#signUpButton {
+	background-color: #ffac33;
+	background-image: linear-gradient(#ffcc4d,#ffac33);
+	border: 0;
+	float: right;
+	color: white;
+	font-weight: bold;
+}
+#signUpButton:hover {
+	opacity: 0.8;
+}
+#signInButton {
+	background-color: #55acee;
+	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.15));
+	border: 0;
+	float: right;
+	color: white;
+	font-weight: bold;
+	height: auto;
+	vertical-align: center;
+	margin-top: 5px;
+}
+#signInButton:hover {
+	opacity: 0.8;
+}
+input {
+	margin: 0;
+}
+.someText {
+  border-bottom: 1px solid #BBB;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	font-size: 15px;
+}
+.title {
+	font-size: 30px;
+	font-weight: bold;
+}
+.content {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+}
+.bld {
+	font-weight: bold;
+}
+.topic {
+	margin-bottom: 10px;
+}
+.singleTopic:hover, .singleUser:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.singleUser {
+	font-style: italic;
+}
