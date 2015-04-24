@@ -16,7 +16,7 @@
     <div class="container logIn">
       <div class="row">
         <section class="introText col-xs-12 col-sm-7">
-          <h1>Welcome to Tweeter</h1>
+          <h1>Welcome to #topico</h1>
           <p>Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
         </section>
         <section class="signInUp col-xs-12 col-sm-5">
@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="signUp">
-            <div class="someText"><b>New to tweeter?</b> Sign up!</div>
+            <div class="someText"><b>New to #topico?</b> Sign up!</div>
             <input  type="username" class="form-control" id="newUserName" placeholder="Username">
             <input type="email" class="form-control" id="newEmail" placeholder="Email">
             <input  type="password" class="form-control" id="newPassword" placeholder="Password">
@@ -70,17 +70,19 @@
           </div><!-- /.navbar-collapse -->
         </div>
       </nav>
-      <div class="container-fluid centering" id="clickToInput"></div>
-      <div class="container-fluid centering" id="inputTopic">
-        <div class="input-group topic col-xs-12 col-sm-6">
-          <span class="input-group-addon">#</span>
-          <input type="text" class="form-control titles" placeholder="Add 1-3 topics" aria-describedby="basic-addon1">
+      <div class="container" id="clickToInput">
+        <div class="form-group">
+          <input type="input" class="form-control" id="initialInput" placeholder="What do you want to write about?">
         </div>
-        <div class="input-group topic col-xs-12 col-sm-6">
-          <input type="text" class="form-control message" placeholder="Write about this topic...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button" id="post">Create</button>
-          </span>
+      </div>
+      <div class="container" id="inputTopic">
+        <div class="input-group topic">
+          <span class="input-group-addon">#</span>
+          <input type="text" class="form-control titles check" placeholder="Add 1-3 topics" aria-describedby="basic-addon1">
+        </div>
+        <div class="topic">
+          <textarea class="form-control message check" rows="3" placeholder="Write about this topic..."></textarea>
+          <a class="btn btn-default" id="post" href="#" role="button">Create</a>
         </div>
       </div>
       <div class="container-fluid contPadding">
