@@ -119,8 +119,7 @@ $ (document).ready(function(){
 		getUserTopics($(this).text().replace('@',''));
 	});
 
-	$(document).on('click', '#myTopics', function(){
-		$.ajax({
+	var getUsername = {
 			type: 'GET',
 			url: 'http://localhost:8000/authenticated',
 			datatype: 'json',
@@ -130,7 +129,9 @@ $ (document).ready(function(){
 			success: function(response){
 				getUserTopics(response.username);
 			}
-		})
+		};
+	$(document).on('click', '#myTopics', function(){
+		$.ajax(getUsername);
 	});
 
 	$(document).on('click', '#searchButton', function(){
@@ -208,6 +209,7 @@ $ (document).ready(function(){
   			console.log(response);
     		$('#inputTopic').hide(1000);
 	    	$('#clickToInput').show(1000);
+	    	$.ajax(getUsername);
       }
 	  })
 	})
