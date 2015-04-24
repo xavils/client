@@ -15,7 +15,8 @@ $ (document).ready(function(){
       	var message = topic[i].message;
       	var titles = topic[i].titles;
       	var user = topic[i].username;
-      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic">' +
+      	var id = topic[i]._id;
+      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic" id="' + id + '">' +
       		'<div class="bld">' +
       		'<span class="singleTopic">' + titles[0] + '.' + '</span>' +
       		'<span class="singleTopic">' + titles[1] + '.' + '</span>' +
@@ -29,13 +30,6 @@ $ (document).ready(function(){
 			  // options
 			  itemSelector: '.topic'
 			});
-
-   //    var $container = $('#container');
-			// // initialize
-			// $container.masonry({
-			//   itemSelector: '.topic'
-			// });
-			// var msnry = $container.data('masonry');
     }
 	};
 
@@ -63,7 +57,8 @@ $ (document).ready(function(){
 	      	var message = topic[i].message;
 	      	var titles = topic[i].titles;
 	      	var user = topic[i].username;
-	      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic">' +
+	      	var id = topic[i]._id;
+	      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic" id="' + id + '">' +
 	      		'<div class="bld">' +
 	      		'<span class="singleTopic">' + titles[0] + '.' + '</span>' +
 	      		'<span class="singleTopic">' + titles[1] + '.' + '</span>' +
@@ -95,13 +90,15 @@ $ (document).ready(function(){
 	      	var message = topic[i].message;
 	      	var titles = topic[i].titles;
 	      	var user = topic[i].username;
-	      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic">' +
+	      	var id = topic[i]._id;
+	      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic" id="' + id + '">' +
 	      		'<div class="bld">' +
 	      		'<span class="singleTopic">' + titles[0] + '.' + '</span>' +
 	      		'<span class="singleTopic">' + titles[1] + '.' + '</span>' +
 	      		'<span class="singleTopic">' + titles[2] + '</span>' +
 	      		'</div><div class="singleUser">' + "@" + user +
-	      		'</div><div>' + message + '</div></div>');
+	      		'</div><div>' + message + '</div>' +
+	      		'<div class="delete">delete</div></div>');
 	      }
 
 				var container = document.querySelector('#container');
@@ -150,7 +147,8 @@ $ (document).ready(function(){
 		      	var message = topic[i].message;
 		      	var titles = topic[i].titles;
 		      	var user = topic[i].username;
-		      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic">' +
+		      	var id = topic[i]._id;
+		      	$('.content').append('<div class="col-xs-12 col-sm-6 col-lg-4 topic" id="' + id + '">' +
 		      		'<div class="bld">' +
 		      		'<span class="singleTopic">' + titles[0] + '.' + '</span>' +
 		      		'<span class="singleTopic">' + titles[1] + '.' + '</span>' +
@@ -275,6 +273,38 @@ $ (document).ready(function(){
 		});
 	});
 
+	var clickToDelete = function(deleteById, element) {
+		$.ajax({
+			type: 'DELETE',
+			url: 'http://localhost:8000/topics/' + deleteById,
+			xhrFields: {
+				withCredentials: true
+			},
+			dataType: 'json',
+			success: function(response){
+				console.log("it works?");
+				$(element).fadeOut( "slow" )
+			}
+		});
+	}
 
+	$(document).on('click', '.delete', function(){
+		clickToDelete($(this).parent().attr("id"), $(this).parent());
+	});
+
+	var getUsername = {
+			type: 'GET',
+			url: 'http://localhost:8000/authenticated',
+			datatype: 'json',
+	    xhrFields: {
+	      withCredentials: true
+	   	},
+			success: function(response){
+				getUserTopics(response.username);
+			}
+		};
+	$(document).on('click', '#myTopics', function(){
+		$.ajax(getUsername);
+	});
 
 });

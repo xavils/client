@@ -94,7 +94,7 @@ input {
 .topic {
 	margin-bottom: 10px;
 }
-.singleTopic:hover, .singleUser:hover {
+.singleTopic:hover, .singleUser:hover, .delete:hover {
 	cursor: pointer;
 	text-decoration: underline;
 }
@@ -132,4 +132,7 @@ input {
 .singleUser {
 	color: #777;
 	margin-bottom: 10px;
+}
+.delete {
+	color: red;
 }
