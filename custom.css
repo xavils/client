@@ -81,8 +81,11 @@ input {
 }
 .content {
 	background-color: white;
-	padding: 20px;
 	border-radius: 10px;
+	padding: 20px 0;
+}
+.contPadding {
+	padding: 20px;
 }
 .bld {
 	font-weight: bold;
@@ -96,4 +99,17 @@ input {
 }
 .singleUser {
 	font-style: italic;
+}
+.row {
+	margin: 0;
+}
+/*.clickToInput, .inputTopic {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}*/
+.centering {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
 }
