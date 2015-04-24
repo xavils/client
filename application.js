@@ -225,26 +225,6 @@ $ (document).ready(function(){
 	    },
 	    dataType: 'json',
 	    success: function(response){
-	      $('#signInButton').on('click', function(){
-					$.ajax({
-				    type: 'POST',
-				    url: 'http://localhost:8000/sessions',
-				    data: {
-				    	user: {
-				    		username: $('#newUserName').val(),
-				    		password: $('#newPassword').val()
-				    	}
-				    },
-				    xhrFields: {
-				      withCredentials: true
-				   	},
-				    dataType: 'json',
-				    success: function(response){
-				      $('.logIn').hide(1000);
-				      console.log(response)
-				    }
-					});
-				});
 				$('.logIn').hide(1000);
 		    $('#inputTopic').show(1000);
 	    }
