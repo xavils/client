@@ -41,6 +41,10 @@ $ (document).ready(function(){
 
 	$.ajax(get12Topics);
 
+	$(document).on('click', '.title', function(){
+		$.ajax(get12Topics);
+	})
+
 	$(document).on('click', '#clickToInput', function(){
 		$('#clickToInput').hide(1000);
     $('#inputTopic').show(1000);
@@ -113,6 +117,20 @@ $ (document).ready(function(){
 
 	$(document).on('click', '.singleUser', function(){
 		getUserTopics($(this).text().replace('@',''));
+	});
+
+	$(document).on('click', '#myTopics', function(){
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost:8000/authenticated',
+			datatype: 'json',
+	    xhrFields: {
+	      withCredentials: true
+	   	},
+			success: function(response){
+				getUserTopics(response.username);
+			}
+		})
 	});
 
 	$(document).on('click', '#searchButton', function(){
@@ -189,15 +207,8 @@ $ (document).ready(function(){
 	    success: function(response){
   			console.log(response);
     		$('#inputTopic').hide(1000);
-	    	$('.click').show(1000);
-	    	$.ajax(get12Topics);
+	    	$('#clickToInput').show(1000);
       }
-
-   //    var container = document.querySelector('#container');
-			// var msnry = new Masonry( container, {
-			//   // options
-			//   itemSelector: '.topic'
-			// });
 	  })
 	})
 

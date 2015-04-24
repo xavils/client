@@ -7,7 +7,7 @@ body {
 	padding-top: 75px;
 }
 .container {
-	max-width: 70%;
+	max-width: 60%;
 	padding-top: 1%;
 }
 .container-fluid {
@@ -89,6 +89,7 @@ input {
 }
 .bld {
 	font-weight: bold;
+	font-size: 17px;
 }
 .topic {
 	margin-bottom: 10px;
@@ -126,5 +127,9 @@ input {
 	font-weight: bold;
 }
 .topic {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+}
+.singleUser {
+	color: #777;
+	margin-bottom: 10px;
 }
